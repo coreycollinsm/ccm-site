@@ -97,7 +97,7 @@ export const WebsiteVisitTracker = () => {
 
         try {
           if (res?.data?.id) {
-            window.sessionStorage.setItem(`${visitIdKey}-ID`, res.data.id); // Store the session ID in sessionStorage on the client
+            window.sessionStorage.setItem(visitIdKey, res.data.id); // Store the session ID in sessionStorage on the client
           }
         } catch {
           // Ignore storage errors.
