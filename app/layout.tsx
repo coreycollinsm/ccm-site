@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { WebsiteVisitTracker } from "@/components/trackers";
 
 export const metadata: Metadata = {
   // TODO Update this with GPT
@@ -15,6 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <WebsiteVisitTracker />
       <body>{children}</body>
     </html>
   );
