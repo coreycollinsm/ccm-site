@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { WebsiteVisitTracker } from "@/components/trackers";
-import { SiteHeader } from "@/components/sections";
+import { Footer, SiteHeader } from "@/components/sections";
 
 export const metadata: Metadata = {
   title: "Corey Collins M. - Full Stack Developer | Typescript & Mern",
@@ -21,6 +21,7 @@ export default function RootLayout({
       <body>
         <SiteHeader />
         {children}
+        <Footer />
       </body>
     </html>
   );
