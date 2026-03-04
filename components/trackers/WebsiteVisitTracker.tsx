@@ -67,11 +67,10 @@ export const WebsiteVisitTracker = () => {
     hasAttemptedThisPageLoad = true;
 
     // prevent this method if in development environment
-    // TODO unblock this after development
-    // if (process.env.NODE_ENV == "development") {
-    //   console.log("🟣 Visitor log disabled in development");
-    //   return;
-    // }
+    if (process.env.NODE_ENV == "development") {
+      console.log("🟣 Visitor log disabled in development");
+      return;
+    }
 
     // Set the payload for the API call
     const payload = {

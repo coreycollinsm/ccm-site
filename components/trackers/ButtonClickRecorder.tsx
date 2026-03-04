@@ -33,13 +33,11 @@ export const ButtonClickTracker = ({
   buttonId: string;
 }) => {
   const handleClick = () => {
-    // TODO re-enable when done
-    // if (process.env.NODE_ENV == "development") {
-    //   console.log("🟣 Button tracking has been disabled in development");
-    //   return;
-    // }
+    if (process.env.NODE_ENV == "development") {
+      console.log("🟣 Button tracking has been disabled in development");
+      return;
+    }
 
-    // TODO get sessionstore visit-id
     const visitId = window.sessionStorage.getItem("visit-id");
     console.log(visitId);
     if (!visitId || visitId.length < 1) return;

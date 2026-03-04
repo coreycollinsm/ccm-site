@@ -16,7 +16,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      {/* TODO disable website tracking on development after button-clicks integrated */}
       <WebsiteVisitTracker />
       <body>
         <SiteHeader />
