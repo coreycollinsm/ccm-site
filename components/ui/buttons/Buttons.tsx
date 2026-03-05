@@ -202,14 +202,12 @@ const handleClickTracking = (page: string, buttonId: string) => {
   const timestamp = getTimestamp();
 
   const visitId = window.sessionStorage.getItem("visit-id");
-  console.log(visitId);
-  if (!visitId || visitId.length < 1) return;
 
   // Format API payload
   const payload = {
     page,
     buttonId,
-    visitId,
+    visitId: visitId ? visitId : "null",
     timestamp,
   };
 
