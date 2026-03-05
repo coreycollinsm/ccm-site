@@ -1,5 +1,5 @@
 import { SectionWrapper } from "@/components/sections";
-import { ButtonLink, ContactButton, LogoLink } from "@/components/ui";
+import { ButtonLink, LogoLink } from "@/components/ui";
 
 export const SiteHeader = () => {
   return (
@@ -21,8 +21,12 @@ export const SiteHeader = () => {
             style="secondary"
             text={"Resume"}
           />
-          <ContactButton
-            tracking={{ page: "nav", buttonId: "ccm-nav-contact" }}
+          <ButtonLink
+            href={"/contact"}
+            buttonId={"ccm-nav-contact"}
+            page={"nav"}
+            size="small"
+            text={"Contact"}
           />
         </nav>
       </div>

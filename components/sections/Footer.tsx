@@ -1,4 +1,4 @@
-import { ButtonLink, ContactButton, LogoLink } from "@/components/ui";
+import { ButtonLink, LogoLink } from "@/components/ui";
 import { SectionWrapper } from "./SectionWrapper";
 
 export const Footer = () => {
@@ -33,10 +33,13 @@ export const Footer = () => {
               style="secondary"
               text={"Resume"}
             />
-            <ContactButton
-              className="text-(--black)"
+            <ButtonLink
+              href={"/contact"}
+              buttonId={"ccm-footer-contact"}
+              page={"footer"}
               darkMode
-              tracking={{ page: "footer", buttonId: "ccm-footer-contact" }}
+              size="small"
+              text={"Contact"}
             />
           </div>
         </div>

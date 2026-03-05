@@ -7,9 +7,6 @@ import {
   ImageWithTextBottomCard,
   ParagraphImageCard,
   VerticalIconListCard,
-  CardHeader,
-  ResumeDownloadButton,
-  ButtonLink,
   BlackParagraphCardWithButton,
 } from "@/components/ui";
 
@@ -49,11 +46,14 @@ export default function Home() {
           />
           <DedicatedLinkCard
             className="lg:flex-1"
+            cta={{
+              buttonId: "ccm-home-githubExternalLink",
+              href: gitHubLink,
+              page: "home",
+              text: "View This Repo on GitHub",
+            }}
             header="This Site Is A Full Stack Application "
-            href={gitHubLink}
             paragraph="I've built this site as a proof-of-capability with a public repo on GitHub. This site includes basic analytics, form handling, AI-enhanced spam filtering, MongoDB blacklisting, and integration with Asana as a workflow tool."
-            text="View This Repo on GitHub"
-            tracking={{ page: "home", buttonId: "ccm-home-githubExternalLink" }}
           />
         </SectionWrapper>
         <SectionWrapper className="section-wrap">
