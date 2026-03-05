@@ -11,4 +11,5 @@ export * from "./cards/ImageOnlyCard";
 export * from "./cards/ImageWithTextBottomCard";
 
 // Inline
+export * from "./inline/CardDividerOnly";
 export * from "./inline/CardHeader";

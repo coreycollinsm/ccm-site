@@ -1,5 +1,5 @@
 // Components
-import { SectionWrapper } from "@/components/sections";
+import { ProjectsCard, SectionWrapper } from "@/components/sections";
 import {
   BulletListCard,
   ImageOnlyCard,
@@ -102,6 +102,84 @@ export default function Home() {
             className="flex-2"
             header="Engineering Highlights"
             subtitle="Examples of systems and features I’ve built across production applications."
+          />
+        </SectionWrapper>
+        <SectionWrapper>
+          <ProjectsCard
+            className="flex-2"
+            header="My Featured Projects"
+            projects={[
+              {
+                header: "Portfolio Analytics & Contact Automation Platform",
+                description:
+                  "Custom analytics and workflow automation system powering this portfolio site.",
+                features: [
+                  "Visit tracking and UTM attribution",
+                  "Button click event logging",
+                  "AI spam filtering using Gemini",
+                  "MongoDB blacklist validation",
+                  "Automated Asana task creation",
+                ],
+                ctas: [
+                  {
+                    text: "Front End Repo",
+                    href: "https://github.com/coreycollinsm/coreycollinsm",
+                  },
+                  {
+                    text: "API Repo",
+                    href: "https://github.com/coreycollinsm/ccm-api",
+                  },
+                ],
+                tags: [
+                  "Next.js",
+                  "Node.Js",
+                  "MongoDB Atlas",
+                  "Render Cloud Hosting",
+                  "Google Gen AI Integration",
+                  "Asana Integration",
+                ],
+              },
+              {
+                header: "Property Management Rental Listings Platform",
+                description:
+                  "Full-stack property listing platform with authenticated management portal.",
+                features: [
+                  "Listing CRUD APIs",
+                  "Image upload pipeline to Google Cloud Storage",
+                  "JWT authentication",
+                  "Listing lifecycle states (active, archived, featured)",
+                ],
+                tags: [
+                  "Next.js",
+                  "Node.Js",
+                  "MongoDB Atlas",
+                  "Google Cloud Storage API",
+                  "HTTP-Only Cookie Auth",
+                  "Licensing",
+                ],
+              },
+              {
+                header: "Policital Campaign Newsletter Management Platform",
+                description:
+                  "Admin portal and subscriber management system for campaign teams.",
+                features: [
+                  "Session-based authentication",
+                  "SendGrid automation",
+                  "Subscriber search and CSV export",
+                  "Multi-tenant access control",
+                ],
+                tags: [
+                  "Next.js",
+                  "Node.Js",
+                  "MongoDB Atlas",
+                  "ngrok Tunneling",
+                  "Rotating Secret Keys",
+                  "SengGrid API",
+                  "Anonymous Analytics",
+                ],
+              },
+            ]}
+            subtitle="How I've solved real-world problems using full-stack technologies"
           />
         </SectionWrapper>
       </main>
