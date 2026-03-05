@@ -7,6 +7,10 @@ import {
   ImageWithTextBottomCard,
   ParagraphImageCard,
   VerticalIconListCard,
+  CardHeader,
+  ResumeDownloadButton,
+  ButtonLink,
+  BlackParagraphCardWithButton,
 } from "@/components/ui";
 
 // Links
@@ -21,8 +25,11 @@ import ServerImage from "@/assets/corey-server.webp";
 
 // Icons
 import {
+  PiBroadcastBold,
   PiChartLineUpBold,
+  PiGearSixBold,
   PiPlugBold,
+  PiPuzzlePieceBold,
   PiStackBold,
   PiTreeStructureBold,
 } from "react-icons/pi";
@@ -113,7 +120,7 @@ export default function Home() {
             ]}
             className="flex-2"
             header="Engineering Highlights"
-            subtitle="Examples of systems and features I’ve built across production applications."
+            subtitle="Examples of systems and features I've built across production applications."
           />
         </SectionWrapper>
         <SectionWrapper>
@@ -305,6 +312,67 @@ export default function Home() {
             header="My Tech Stack"
             subtitle="These are the systems I use to build cool things."
           />
+        </SectionWrapper>
+        <SectionWrapper className="section-wrap">
+          <VerticalIconListCard
+            className="flex-1"
+            header="Seasoned Business Developer"
+            list={[
+              {
+                icon: PiBroadcastBold,
+                title: "Telecommunications Integration",
+                description:
+                  "Integrating Nokia Airscale technology across the midwest cellular markets.",
+              },
+              {
+                icon: PiPuzzlePieceBold,
+                title: "Tool Integration Consulting",
+                description:
+                  "I've helped many business owners improve operations by connecting their tools.",
+              },
+              {
+                icon: PiGearSixBold,
+                title: "Software Implementation",
+                description:
+                  "I've organized business workflows across departments to improve operations",
+              },
+              {
+                icon: PiChartLineUpBold,
+                title: "Efficiency Tracking",
+                description:
+                  "I've implemented real-time workflow tracking to understand operational bottlenecks",
+              },
+            ]}
+            subtitle="I've built and developed multiple businesses across business sectors"
+          />
+          <BlackParagraphCardWithButton
+            cta={{
+              href: "/Corey%20Collins%20-%20Resume.pdf",
+              buttonId: "ccm-home-jobsearch-resume",
+              darkMode: true,
+              download: true,
+              page: "home",
+              text: "Download My Resume",
+            }}
+            header="Let's Build Something Together"
+            subtitle="I'm currently seeking a full-time Full Stack Developer role
+              where I can build product features and ship systems end-to-end."
+          >
+            <p>
+              My experience building tools combined with over a decade of
+              managing projects and initiatives with measureable progress makes
+              me a powerhouse for any team looking for someone who can just get
+              started. I am a lifetime learner and my experience with technology
+              is a direct result of my passion to never stop learning new
+              things.
+            </p>
+            <p>
+              If you are looking for someone with project experience who you can
+              trust to be a driving force on your team, someone who encourages
+              others, who accepts critique and stays motivated, I&apos;m
+              you&apos;re guy.
+            </p>
+          </BlackParagraphCardWithButton>
         </SectionWrapper>
       </main>
     </div>

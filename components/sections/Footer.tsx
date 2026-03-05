@@ -1,4 +1,4 @@
-import { ContactButton, LogoLink, ResumeDownloadButton } from "@/components/ui";
+import { ButtonLink, ContactButton, LogoLink } from "@/components/ui";
 import { SectionWrapper } from "./SectionWrapper";
 
 export const Footer = () => {
@@ -23,9 +23,15 @@ export const Footer = () => {
         <div className="card-dark round padding flex-2 flex flex-col gap-4 items-start">
           <div className="flex flex-col gap-4">
             <h5>Quick Links</h5>
-            <ResumeDownloadButton
+            <ButtonLink
+              buttonId={"ccm-footer-resume"}
               darkMode
-              tracking={{ page: "footer", buttonId: "ccm-footer-resume" }}
+              download
+              href={"/Corey%20Collins%20-%20Resume.pdf"}
+              page={"footer"}
+              size="small"
+              style="secondary"
+              text={"Resume"}
             />
             <ContactButton
               className="text-(--black)"

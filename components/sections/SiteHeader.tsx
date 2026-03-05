@@ -1,5 +1,5 @@
 import { SectionWrapper } from "@/components/sections";
-import { ContactButton, LogoLink, ResumeDownloadButton } from "@/components/ui";
+import { ButtonLink, ContactButton, LogoLink } from "@/components/ui";
 
 export const SiteHeader = () => {
   return (
@@ -12,8 +12,14 @@ export const SiteHeader = () => {
           text={null}
         />
         <nav className="flex items-center gap-2">
-          <ResumeDownloadButton
-            tracking={{ page: "nav", buttonId: "ccm-nav-resume" }}
+          <ButtonLink
+            href={"/Corey%20Collins%20-%20Resume.pdf"}
+            buttonId={"ccm-nav-resume"}
+            download
+            page={"nav"}
+            size="small"
+            style="secondary"
+            text={"Resume"}
           />
           <ContactButton
             tracking={{ page: "nav", buttonId: "ccm-nav-contact" }}
