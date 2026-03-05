@@ -14,12 +14,11 @@ export const Footer = () => {
             }}
           />
           <h6 className="mt-4">CoreyCollinsM.com</h6>
-          <p className="text-sm">Project & Operations Manager</p>
+          <p className="text-sm">Full Stack Developer</p>
           <p className="text-xs mt-4 text-(--bright-gray) max-w-120">
-            I build digital systems and lead teams that turn complexity into
-            growth. With over a decade of experience aligning people, process,
-            and technology, I specialize in delivering real-time visibility,
-            scalable operations, and measurable business impact.
+            I design and ship full-stack product features using Next.js,
+            Node.js, and MongoDB — from frontend UX to backend APIs,
+            integrations, and deployment.
           </p>
         </div>
         <div className="card-dark round padding flex-2 flex flex-col gap-4 items-start">

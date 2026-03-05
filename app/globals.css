@@ -42,7 +42,7 @@
 
 @layer components {
   .card {
-    @apply border shadow-sm min-w-100 bg-white;
+    @apply border shadow-sm bg-white;
     border-width: 1px;
     border-color: var(--border);
   }
@@ -52,10 +52,10 @@
     border-color: var(--dark-gray);
   }
   .padding {
-    @apply p-8;
+    @apply p-4 sm:p-8;
   }
   .padding-small {
-    @apply p-4;
+    @apply p-2 sm:p-4;
   }
   .padding-top {
     @apply py-64 pb-8 px-8;
@@ -70,7 +70,7 @@
     @apply flex flex-col-reverse lg:flex-row gap-16 lg:gap-8;
   }
   .round {
-    @apply rounded-4xl;
+    @apply rounded-2xl sm:rounded-4xl;
   }
 }
 

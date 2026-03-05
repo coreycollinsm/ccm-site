@@ -18,9 +18,10 @@ const Page = () => {
             </h3>
           </div>
           <p className="mt-4 text-sm text-(--light-gray)">
-            I&apos;m passionate about helping passionate people reach their
-            goal. If you get excited about how technology and efficiency
-            management can transform your organization, I want to connect.
+            I&apos;m a full-stack developer who enjoys building end-to-end web
+            applications and solving real product problems. If you&apos;re
+            working on something interesting or think I could contribute to your
+            team, I&apos;d love to connect.
           </p>
         </div>
         <div className="flex-1">
