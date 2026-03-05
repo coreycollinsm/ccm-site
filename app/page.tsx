@@ -5,6 +5,8 @@ import {
   ImageOnlyCard,
   DedicatedLinkCard,
   ImageWithTextBottomCard,
+  ParagraphImageCard,
+  VerticalIconListCard,
 } from "@/components/ui";
 
 // Links
@@ -13,7 +15,14 @@ const gitHubLink = socialLinks.github.href;
 
 // Images
 import HeroImage from "@/assets/home-hero.webp";
-import WritingImage from "@/assets/corey-coffee-shop.webp";
+import CoffeeShopImage from "@/assets/corey-coffee-shop.webp";
+import WritingImage from "@/assets/corey-writing.webp";
+import {
+  PiChartLineUpBold,
+  PiPlugBold,
+  PiStackBold,
+  PiTreeStructureBold,
+} from "react-icons/pi";
 
 export default function Home() {
   return (
@@ -40,7 +49,7 @@ export default function Home() {
         <SectionWrapper className="section-wrap">
           <ImageOnlyCard
             backgroundAlignment={{ alignX: "center", alignY: "top" }}
-            backgroundImage={WritingImage}
+            backgroundImage={CoffeeShopImage}
             className="flex-1"
             noGradient
           />
@@ -180,6 +189,51 @@ export default function Home() {
               },
             ]}
             subtitle="How I've solved real-world problems using full-stack technologies"
+          />
+        </SectionWrapper>
+        <SectionWrapper className="section-wrap-reverse">
+          <VerticalIconListCard
+            className="flex-1"
+            header="My Approach to Building Systems"
+            list={[
+              {
+                icon: PiTreeStructureBold,
+                title: "Design before automation",
+                description:
+                  "Clean data models and workflows before introducing automation.",
+              },
+              {
+                icon: PiStackBold,
+                title: "Ship complete features",
+                description:
+                  "I build across the stack — UI, APIs, database design, and deployment.",
+              },
+              {
+                icon: PiPlugBold,
+                title: "Reduce work with better tools",
+                description:
+                  "Automating workflows between applications like Asana, SendGrid, and analytics systems.",
+              },
+              {
+                icon: PiChartLineUpBold,
+                title: "Measure product behavior",
+                description:
+                  "I instrument applications with event tracking and attribution data to understand usage.",
+              },
+            ]}
+            subtitle="The standard of how I design systems & develop architectures"
+          />
+          <ParagraphImageCard
+            backgroundAlignment={{ alignX: "center", alignY: "center" }}
+            backgroundImage={WritingImage}
+            className="flex-1 text-white"
+            paragraph={
+              <p>
+                &quot;I build clean systems first.
+                <br />
+                Then I automate them.&quot;
+              </p>
+            }
           />
         </SectionWrapper>
       </main>
