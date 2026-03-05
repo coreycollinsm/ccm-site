@@ -66,12 +66,6 @@ export const WebsiteVisitTracker = () => {
     // prevent future duplicate calls on this session
     hasAttemptedThisPageLoad = true;
 
-    // prevent this method if in development environment
-    if (process.env.NODE_ENV == "development") {
-      console.log("🟣 Visitor log disabled in development");
-      return;
-    }
-
     // Set the payload for the API call
     const payload = {
       source: TRACKED_SOURCE,

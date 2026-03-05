@@ -131,6 +131,7 @@ export default function Home() {
                 ],
                 ctas: [
                   {
+                    // TODO add button tracking
                     text: "Front End Repo",
                     href: "https://github.com/coreycollinsm/coreycollinsm",
                   },

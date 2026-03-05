@@ -8,10 +8,9 @@ export const Footer = () => {
         <div className="padding card-dark round flex-1">
           <LogoLink
             darkMode
-            tracking={{
-              page: "footer",
-              buttonId: "ccm-footer-logo",
-            }}
+            page="footer"
+            buttonId="ccm-footer-logo"
+            text={null}
           />
           <h6 className="mt-4">CoreyCollinsM.com</h6>
           <p className="text-sm">Full Stack Developer</p>

@@ -7,7 +7,9 @@ export const SiteHeader = () => {
       <div className="w-full flex items-center justify-between mt-4 p-4 round card">
         <LogoLink
           className="ml-2"
-          tracking={{ page: "nav", buttonId: "ccm-nav-logo" }}
+          buttonId="ccm-nav-logo"
+          page="nav"
+          text={null}
         />
         <nav className="flex items-center gap-2">
           <ResumeDownloadButton

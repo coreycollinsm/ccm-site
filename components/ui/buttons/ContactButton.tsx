@@ -1,4 +1,4 @@
-import { ButtonClickTracker, ButtonClickSetup } from "@/components/trackers";
+import { ButtonClickSetup } from "@/components/trackers";
 import { ButtonLink } from "./Buttons";
 
 export const ContactButton = ({
@@ -13,18 +13,15 @@ export const ContactButton = ({
   const { page: tPage, buttonId } = tracking;
 
   return (
-    <ButtonClickTracker
-      className={`${className}`}
-      page={tPage}
+    <ButtonLink
       buttonId={buttonId}
-    >
-      <ButtonLink
-        darkMode={darkMode}
-        href="/contact"
-        size="small"
-        style="tertiary"
-        text="Contact Me"
-      />
-    </ButtonClickTracker>
+      className={className}
+      darkMode={darkMode}
+      href="/contact"
+      page={tPage}
+      size="small"
+      style="tertiary"
+      text="Contact Me"
+    />
   );
 };
