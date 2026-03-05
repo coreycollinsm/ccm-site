@@ -37,7 +37,7 @@ export default function Home() {
             tracking={{ page: "home", buttonId: "ccm-home-casestudy" }}
           />
         </SectionWrapper>
-        <SectionWrapper className="section-wrap-reverse">
+        <SectionWrapper className="section-wrap">
           <ImageOnlyCard
             backgroundAlignment={{ alignX: "center", alignY: "top" }}
             backgroundImage={WritingImage}
