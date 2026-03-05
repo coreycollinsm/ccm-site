@@ -1,9 +1,19 @@
-import { DedicatedLinkCard, ImageWithTextBottomCard } from "@/components/ui";
+// Components
 import { SectionWrapper } from "@/components/sections";
+import {
+  BulletListCard,
+  ImageOnlyCard,
+  DedicatedLinkCard,
+  ImageWithTextBottomCard,
+} from "@/components/ui";
 
-import HeroImage from "@/assets/home-hero.webp";
+// Links
 import { socialLinks } from "@/config";
 const gitHubLink = socialLinks.github.href;
+
+// Images
+import HeroImage from "@/assets/home-hero.webp";
+import WritingImage from "@/assets/corey-coffee-shop.webp";
 
 export default function Home() {
   return (
@@ -25,6 +35,73 @@ export default function Home() {
             paragraph="I've built this site as a proof-of-capability with a public repo on GitHub. This site includes basic analytics, form handling, AI-enhanced spam filtering, MongoDB blacklisting, and integration with Asana as a workflow tool."
             text="View This Repo on GitHub"
             tracking={{ page: "home", buttonId: "ccm-home-casestudy" }}
+          />
+        </SectionWrapper>
+        <SectionWrapper className="section-wrap-reverse">
+          <ImageOnlyCard
+            backgroundAlignment={{ alignX: "center", alignY: "top" }}
+            backgroundImage={WritingImage}
+            className="flex-1"
+            noGradient
+          />
+          <BulletListCard
+            bulletListAsTextArray={[
+              {
+                header: "Full-Stack Product Development",
+                listItems: [
+                  "End-to-end feature ownership",
+                  "UI → API → Database → Deployment",
+                ],
+              },
+              {
+                header: "Authentication & Security",
+                listItems: [
+                  "Session authentication",
+                  "JWT flows",
+                  "HTTP-only cookies",
+                  "Rate limiting and credential hashing",
+                ],
+              },
+              {
+                header: "AI-Assisted Automation",
+                listItems: [
+                  "Gemini AI spam classification",
+                  "Blacklist filtering",
+                  "Workflow automation",
+                ],
+              },
+              {
+                header: "Custom Analytics Systems",
+                listItems: [
+                  "Visit tracking",
+                  "Event logging",
+                  "UTM attribution",
+                  "Session deduplication",
+                ],
+              },
+              {
+                header: "API Integrations",
+                listItems: [
+                  "SendGrid",
+                  "Google Cloud Storage",
+                  "Asana",
+                  "Monday",
+                  "ClickUp",
+                ],
+              },
+              {
+                header: "Admin Platforms",
+                listItems: [
+                  "Protected portals",
+                  "Search + filtering",
+                  "CSV exports",
+                  "Multi-tenant RBAC access control",
+                ],
+              },
+            ]}
+            className="flex-2"
+            header="Engineering Highlights"
+            subtitle="Examples of systems and features I’ve built across production applications."
           />
         </SectionWrapper>
       </main>
