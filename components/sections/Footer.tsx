@@ -1,4 +1,4 @@
-import { ContactButton, LogoLink, ResumeDownloadButton } from "@/components/ui";
+import { ButtonLink, LogoLink } from "@/components/ui";
 import { SectionWrapper } from "./SectionWrapper";
 
 export const Footer = () => {
@@ -8,10 +8,9 @@ export const Footer = () => {
         <div className="padding card-dark round flex-1">
           <LogoLink
             darkMode
-            tracking={{
-              page: "footer",
-              buttonId: "ccm-footer-logo",
-            }}
+            page="footer"
+            buttonId="ccm-footer-logo"
+            text={null}
           />
           <h6 className="mt-4">CoreyCollinsM.com</h6>
           <p className="text-sm">Full Stack Developer</p>
@@ -24,14 +23,23 @@ export const Footer = () => {
         <div className="card-dark round padding flex-2 flex flex-col gap-4 items-start">
           <div className="flex flex-col gap-4">
             <h5>Quick Links</h5>
-            <ResumeDownloadButton
+            <ButtonLink
+              buttonId={"ccm-footer-resume"}
               darkMode
-              tracking={{ page: "footer", buttonId: "ccm-footer-resume" }}
+              download
+              href={"/Corey%20Collins%20-%20Resume.pdf"}
+              page={"footer"}
+              size="small"
+              style="secondary"
+              text={"Resume"}
             />
-            <ContactButton
-              className="text-(--black)"
+            <ButtonLink
+              href={"/contact"}
+              buttonId={"ccm-footer-contact"}
+              page={"footer"}
               darkMode
-              tracking={{ page: "footer", buttonId: "ccm-footer-contact" }}
+              size="small"
+              text={"Contact"}
             />
           </div>
         </div>

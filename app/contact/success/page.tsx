@@ -1,5 +1,4 @@
 import { SectionWrapper } from "@/components/sections";
-import { ButtonClickTracker } from "@/components/trackers";
 import { ButtonLink } from "@/components/ui";
 import { Metadata } from "next";
 
@@ -25,12 +24,14 @@ const Page = () => {
               you as soon as possible. If you don&apos;t hear back in a timely
               manner, feel free to reach to me via social channels.
             </p>
-            <ButtonClickTracker
+
+            <ButtonLink
+              backwards
+              href="/"
               page="contact-success"
               buttonId="ccm-contactsuccess-returnhome"
-            >
-              <ButtonLink backwards href="/" text="Return Home" />
-            </ButtonClickTracker>
+              text="Return Home"
+            />
           </div>
         </div>
       </SectionWrapper>

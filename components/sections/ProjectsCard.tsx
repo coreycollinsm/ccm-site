@@ -1,11 +1,11 @@
-import { ButtonLink, CardHeader } from "@/components/ui";
+import { LinkButtonProps, ButtonLink, CardHeader } from "@/components/ui";
 import { FaTags } from "react-icons/fa";
 
 type ProjectType = {
   header: string;
   description: string;
   features: string[];
-  ctas?: { text: string; href: string }[];
+  ctas?: LinkButtonProps[];
   tags?: string[];
 };
 
@@ -92,21 +92,19 @@ const ProjectFeatureList = ({ features }: { features: string[] }) => {
   );
 };
 
-const ProjectButtons = ({
-  ctas,
-}: {
-  ctas: { text: string; href: string }[];
-}) => {
+const ProjectButtons = ({ ctas }: { ctas: LinkButtonProps[] }) => {
   return (
     <div className="flex gap-4 text-sm">
       {ctas.map((cta, index) => {
-        const { text, href } = cta;
+        const { buttonId, href, page, text } = cta;
         return (
           <ButtonLink
+            buttonId={buttonId}
             external
             key={text}
             href={href}
             newTab
+            page={page}
             size="small"
             style={index == 0 ? "primary" : "secondary"}
             text={text}

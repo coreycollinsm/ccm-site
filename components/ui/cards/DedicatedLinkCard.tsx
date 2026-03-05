@@ -1,37 +1,37 @@
-import { ButtonClickTracker, ButtonClickSetup } from "@/components/trackers";
-import { ButtonLink } from "@/components/ui";
+import { ButtonLink, LinkButtonProps } from "@/components/ui";
 
 interface Props {
+  cta: LinkButtonProps;
   className?: string;
   header?: string;
-  href: string;
   paragraph: string;
-  text?: string;
-  tracking: ButtonClickSetup;
 }
 
 export const DedicatedLinkCard = ({
+  cta,
   className,
   header,
-  href,
   paragraph,
-  text = "Download",
-  tracking,
 }: Props) => {
-  const { page, buttonId } = tracking;
+  const { buttonId, href, page, text } = cta;
   return (
-    <ButtonClickTracker
+    <div
       className={`${className} h-full w-full card round padding flex flex-col gap-16 justify-between`}
-      page={page}
-      buttonId={buttonId}
     >
       <div className="flex flex-col gap-4">
         {header && <h2>{header}</h2>}
         <p>{paragraph}</p>
       </div>
       <div className="flex lg:inline pt-4 border-t border-(--border)">
-        <ButtonLink external href={href} newTab text={text} />
+        <ButtonLink
+          buttonId={buttonId}
+          external
+          href={href}
+          newTab
+          page={page}
+          text={text}
+        />
       </div>
-    </ButtonClickTracker>
+    </div>
   );
 };

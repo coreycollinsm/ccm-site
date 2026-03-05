@@ -7,6 +7,7 @@ import {
   ImageWithTextBottomCard,
   ParagraphImageCard,
   VerticalIconListCard,
+  BlackParagraphCardWithButton,
 } from "@/components/ui";
 
 // Links
@@ -17,9 +18,15 @@ const gitHubLink = socialLinks.github.href;
 import HeroImage from "@/assets/home-hero.webp";
 import CoffeeShopImage from "@/assets/corey-coffee-shop.webp";
 import WritingImage from "@/assets/corey-writing.webp";
+import ServerImage from "@/assets/corey-server.webp";
+
+// Icons
 import {
+  PiBroadcastBold,
   PiChartLineUpBold,
+  PiGearSixBold,
   PiPlugBold,
+  PiPuzzlePieceBold,
   PiStackBold,
   PiTreeStructureBold,
 } from "react-icons/pi";
@@ -39,11 +46,14 @@ export default function Home() {
           />
           <DedicatedLinkCard
             className="lg:flex-1"
+            cta={{
+              buttonId: "ccm-home-githubExternalLink",
+              href: gitHubLink,
+              page: "home",
+              text: "View This Repo on GitHub",
+            }}
             header="This Site Is A Full Stack Application "
-            href={gitHubLink}
             paragraph="I've built this site as a proof-of-capability with a public repo on GitHub. This site includes basic analytics, form handling, AI-enhanced spam filtering, MongoDB blacklisting, and integration with Asana as a workflow tool."
-            text="View This Repo on GitHub"
-            tracking={{ page: "home", buttonId: "ccm-home-casestudy" }}
           />
         </SectionWrapper>
         <SectionWrapper className="section-wrap">
@@ -110,7 +120,7 @@ export default function Home() {
             ]}
             className="flex-2"
             header="Engineering Highlights"
-            subtitle="Examples of systems and features I’ve built across production applications."
+            subtitle="Examples of systems and features I've built across production applications."
           />
         </SectionWrapper>
         <SectionWrapper>
@@ -131,12 +141,16 @@ export default function Home() {
                 ],
                 ctas: [
                   {
-                    text: "Front End Repo",
+                    buttonId: "ccm-home-project01-frontendrepo",
                     href: "https://github.com/coreycollinsm/coreycollinsm",
+                    page: "home",
+                    text: "Front End Repo",
                   },
                   {
-                    text: "API Repo",
+                    buttonId: "ccm-home-project01-backendrepo",
                     href: "https://github.com/coreycollinsm/ccm-api",
+                    page: "home",
+                    text: "API Repo",
                   },
                 ],
                 tags: [
@@ -235,6 +249,130 @@ export default function Home() {
               </p>
             }
           />
+        </SectionWrapper>
+
+        <SectionWrapper className="section-wrap-reverse">
+          <ParagraphImageCard
+            backgroundAlignment={{ alignX: "center", alignY: "center" }}
+            backgroundImage={ServerImage}
+            className="flex-1 text-white"
+            paragraph={
+              <p>
+                I have field deployment experience
+                <br />
+                in the telecom industry.
+              </p>
+            }
+          />
+          <BulletListCard
+            bulletListAsTextArray={[
+              {
+                header: "Frontend",
+                listItems: ["Next.js", "React", "TypeScript", "Tailwind"],
+              },
+              {
+                header: "Backend",
+                listItems: ["Node.js", "Express", "REST APIs"],
+              },
+              {
+                header: "Database",
+                listItems: [
+                  "MongoDB - Atlas",
+                  "MongoDB - Community",
+                  "Google Firebase",
+                ],
+              },
+              {
+                header: "Integrations",
+                listItems: [
+                  "SendGrid",
+                  "Gemini AI",
+                  "Google Cloud Storage",
+                  "Asana API",
+                  "Monday API",
+                  "ClickUp API",
+                ],
+              },
+              {
+                header: "Infrastructure",
+                listItems: [
+                  "Netlify",
+                  "Render",
+                  "NGROK Tunneling",
+                  "Environment Config",
+                  "Git Workflows",
+                ],
+              },
+              {
+                header: "Some Experience",
+                listItems: ["Java (Backend)", "Python", "Django"],
+              },
+            ]}
+            className="flex-1"
+            header="My Tech Stack"
+            subtitle="These are the systems I use to build cool things."
+          />
+        </SectionWrapper>
+        <SectionWrapper className="section-wrap">
+          <VerticalIconListCard
+            className="flex-1"
+            header="Seasoned Business Developer"
+            list={[
+              {
+                icon: PiBroadcastBold,
+                title: "Telecommunications Integration",
+                description:
+                  "Integrating Nokia Airscale technology across the midwest cellular markets.",
+              },
+              {
+                icon: PiPuzzlePieceBold,
+                title: "Tool Integration Consulting",
+                description:
+                  "I've helped many business owners improve operations by connecting their tools.",
+              },
+              {
+                icon: PiGearSixBold,
+                title: "Software Implementation",
+                description:
+                  "I've organized business workflows across departments to improve operations",
+              },
+              {
+                icon: PiChartLineUpBold,
+                title: "Efficiency Tracking",
+                description:
+                  "I've implemented real-time workflow tracking to understand operational bottlenecks",
+              },
+            ]}
+            subtitle="I've built and developed multiple businesses across business sectors"
+          />
+          <BlackParagraphCardWithButton
+            cta={{
+              href: "/Corey%20Collins%20-%20Resume.pdf",
+              buttonId: "ccm-home-jobsearch-resume",
+              darkMode: true,
+              download: true,
+              page: "home",
+              text: "Download My Resume",
+            }}
+            header="Let's Build Something Together"
+            subtitle="I'm currently seeking a full-time Full Stack Developer role
+              where I can build product features and ship systems end-to-end."
+          >
+            <p>
+              My experience building tools combined with over a decade of
+              managing projects and initiatives with measureable progress makes
+              me a powerhouse for any team looking for someone who can just get
+              started. I am a lifetime learner and my experience with technology
+              is a direct result of my passion to never stop learning new
+              things.
+            </p>
+            <p>
+              If you are looking for someone with project experience who you can
+              trust to be a driving force on your team, someone who encourages
+              others, who accepts critique and stays motivated, I&apos;m
+              you&apos;re guy.
+            </p>
+          </BlackParagraphCardWithButton>
         </SectionWrapper>
       </main>
     </div>

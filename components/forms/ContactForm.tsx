@@ -152,8 +152,10 @@ export const ContactForm = ({ className }: { className?: string }) => {
         </div>
         {!disableForm && (
           <SubmitButton
+            buttonId={"ccm-contact-submit"}
             darkMode
             disabled={isLoading}
+            page={"contact"}
             style="primary"
             text={`${isLoading ? "Sending..." : "Send Message"}`}
           />

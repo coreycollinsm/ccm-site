@@ -1,5 +1,4 @@
 import { SectionWrapper } from "@/components/sections";
-import { ButtonClickTracker } from "@/components/trackers";
 import { ButtonLink } from "@/components/ui";
 import { Metadata } from "next";
 
@@ -24,9 +23,14 @@ const Page = () => {
               no longer exists. If you believe this to be an error, feel free to
               reach out via my contact form.
             </p>
-            <ButtonClickTracker page="404" buttonId="ccm-404-returnhome">
-              <ButtonLink backwards href="/" text="Return Home" />
-            </ButtonClickTracker>
+
+            <ButtonLink
+              backwards
+              href="/"
+              buttonId="ccm-404-returnhome"
+              page="404"
+              text="Return Home"
+            />
           </div>
         </div>
       </SectionWrapper>
