@@ -17,6 +17,9 @@ const gitHubLink = socialLinks.github.href;
 import HeroImage from "@/assets/home-hero.webp";
 import CoffeeShopImage from "@/assets/corey-coffee-shop.webp";
 import WritingImage from "@/assets/corey-writing.webp";
+import ServerImage from "@/assets/corey-server.webp";
+
+// Icons
 import {
   PiChartLineUpBold,
   PiPlugBold,
@@ -238,6 +241,69 @@ export default function Home() {
                 Then I automate them.&quot;
               </p>
             }
+          />
+        </SectionWrapper>
+
+        <SectionWrapper className="section-wrap-reverse">
+          <ParagraphImageCard
+            backgroundAlignment={{ alignX: "center", alignY: "center" }}
+            backgroundImage={ServerImage}
+            className="flex-1 text-white"
+            paragraph={
+              <p>
+                I have field deployment experience
+                <br />
+                in the telecom industry.
+              </p>
+            }
+          />
+          <BulletListCard
+            bulletListAsTextArray={[
+              {
+                header: "Frontend",
+                listItems: ["Next.js", "React", "TypeScript", "Tailwind"],
+              },
+              {
+                header: "Backend",
+                listItems: ["Node.js", "Express", "REST APIs"],
+              },
+              {
+                header: "Database",
+                listItems: [
+                  "MongoDB - Atlas",
+                  "MongoDB - Community",
+                  "Google Firebase",
+                ],
+              },
+              {
+                header: "Integrations",
+                listItems: [
+                  "SendGrid",
+                  "Gemini AI",
+                  "Google Cloud Storage",
+                  "Asana API",
+                  "Monday API",
+                  "ClickUp API",
+                ],
+              },
+              {
+                header: "Infrastructure",
+                listItems: [
+                  "Netlify",
+                  "Render",
+                  "NGROK Tunneling",
+                  "Environment Config",
+                  "Git Workflows",
+                ],
+              },
+              {
+                header: "Some Experience",
+                listItems: ["Java (Backend)", "Python", "Django"],
+              },
+            ]}
+            className="flex-1"
+            header="My Tech Stack"
+            subtitle="These are the systems I use to build cool things."
           />
         </SectionWrapper>
       </main>
