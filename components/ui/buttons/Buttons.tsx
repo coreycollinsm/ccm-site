@@ -8,7 +8,7 @@ import { IoMdDownload } from "react-icons/io";
 type ButtonSize = "small" | "medium";
 type ButtonStyle = "primary" | "secondary" | "tertiary";
 
-interface BaseButtonProps {
+export interface BaseButtonProps {
   buttonId: string;
   className?: string;
   darkMode?: boolean;
@@ -18,7 +18,7 @@ interface BaseButtonProps {
   text: string | null;
 }
 
-interface LinkButtonProps extends BaseButtonProps {
+export interface LinkButtonProps extends BaseButtonProps {
   href: string;
   backwards?: boolean;
   download?: boolean;

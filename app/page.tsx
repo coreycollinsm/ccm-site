@@ -131,13 +131,16 @@ export default function Home() {
                 ],
                 ctas: [
                   {
-                    // TODO add button tracking
-                    text: "Front End Repo",
+                    buttonId: "ccm-home-project01-frontendrepo",
                     href: "https://github.com/coreycollinsm/coreycollinsm",
+                    page: "home",
+                    text: "Front End Repo",
                   },
                   {
-                    text: "API Repo",
+                    buttonId: "ccm-home-project01-backendrepo",
                     href: "https://github.com/coreycollinsm/ccm-api",
+                    page: "home",
+                    text: "API Repo",
                   },
                 ],
                 tags: [
