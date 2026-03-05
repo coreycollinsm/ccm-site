@@ -43,7 +43,7 @@ export default function Home() {
             href={gitHubLink}
             paragraph="I've built this site as a proof-of-capability with a public repo on GitHub. This site includes basic analytics, form handling, AI-enhanced spam filtering, MongoDB blacklisting, and integration with Asana as a workflow tool."
             text="View This Repo on GitHub"
-            tracking={{ page: "home", buttonId: "ccm-home-casestudy" }}
+            tracking={{ page: "home", buttonId: "ccm-home-githubExternalLink" }}
           />
         </SectionWrapper>
         <SectionWrapper className="section-wrap">
