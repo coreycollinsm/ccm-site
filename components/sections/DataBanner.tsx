@@ -1,6 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
 import { acceptConsent, declineConsent } from "../trackers/TrackingConsent";
+import Link from "next/link";
+import { CardDividerOnly } from "../ui";
 
 export const DataBanner = () => {
   // Default = hidden
@@ -29,26 +31,34 @@ export const DataBanner = () => {
   };
 
   const buttonBaseStyles =
-    "py-1 px-3 whitespace-nowrap border-2 border(--black) rounded-full cursor-pointer";
+    "py-3 px-4 sm:py-2 sm:px-3 text-md md:text-sm whitespace-nowrap border-2 border-(--black) rounded-full cursor-pointer text-center flex justify-center items-center";
 
   if (showBanner)
     return (
       <div className="fixed bottom-5 px-5 left-[50%] -translate-x-[50%] w-full flex justify-center">
-        <div className="card padding-small round text-xs flex items-center gap-4">
-          <p>
+        <div className="card bg-(--almost-white) padding-grow round flex flex-col md:flex-row items-center gap-2 md:gap-4 max-w-240">
+          <p className="text-xs">
             This site collects anonymous details about visitors for the purpose
             of showcasing my full-stack capabilities. You can opt-out at any
             time, but all data is private and never shared, only used as an
-            example to prospective partners.
+            example to prospective partners. If you have any questions or
+            concerns, please visit my{" "}
+            <Link className="text-blue-400 font-semibold" href="/data-policy">
+              Data Policy Page
+            </Link>
+            .
           </p>
-          <div className={`${buttonBaseStyles}`} onClick={handleOptOut}>
-            Opt-Out
-          </div>
-          <div
-            className={`${buttonBaseStyles} bg-(--black) text-white text-sm`}
-            onClick={handleAccept}
-          >
-            Accept and Dismiss
+          <CardDividerOnly className="md:h-full w-full md:w-0.5" />
+          <div className="w-full sm:w-auto flex flex-col sm:flex-row gap-4">
+            <div className={`${buttonBaseStyles}`} onClick={handleOptOut}>
+              Opt-Out
+            </div>
+            <div
+              className={`${buttonBaseStyles} bg-(--black) text-white sm:text-sm`}
+              onClick={handleAccept}
+            >
+              Accept and Dismiss
+            </div>
           </div>
         </div>
       </div>
