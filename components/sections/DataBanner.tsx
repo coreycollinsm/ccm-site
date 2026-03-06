@@ -3,8 +3,10 @@ import { useEffect, useState } from "react";
 import { acceptConcent, declineConsent } from "../trackers/TrackingConsent";
 
 export const DataBanner = () => {
+  // Default = hidden
   const [showBanner, setShowBanner] = useState(false);
 
+  // LocalStorage hideBanner determines visibility
   useEffect(() => {
     const checkBannerStatus = async () => {
       const isBannerHidden = window.localStorage.getItem("hideBanner");

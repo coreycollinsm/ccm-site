@@ -16,13 +16,22 @@ const DATA_PERMISSION_STORAGE_KEY = "canCollectData";
 export const TrackingConsent = () => {
   useEffect(() => {
     const trackVisit = async () => {
+      // Prevent execution during Chrome prerender / speculative loads
+      // Chrome was prerendering when pasting the link + doesn't save to storage API
+      // This prevents that
+      if (document.visibilityState !== "visible") {
+        return;
+      }
+
+      // Pull saved consent status and stop if "declined"
       try {
         const consent = window.localStorage.getItem(CONSENT_STORAGE_KEY);
         if (consent === "declined") return;
 
-        let trackingId = window.localStorage.getItem(TRACKING_STORAGE_KEY);
+        // ✅ consent is implied or directly stored - can collect data
 
-        // Create tracking ID if it doesn't exist
+        // Checking for trackingId or getting a new one
+        let trackingId = window.localStorage.getItem(TRACKING_STORAGE_KEY);
         if (!trackingId) {
           const timestamp = getTimestamp();
 
@@ -42,14 +51,15 @@ export const TrackingConsent = () => {
           const serverTrackingData = await response.json();
           trackingId = serverTrackingData?.data?.trackingId;
 
+          // Save trackingId in LocalStorage for multiple visits (represents the user)
           if (trackingId) {
             window.localStorage.setItem(TRACKING_STORAGE_KEY, trackingId);
           } else return;
         }
 
+        // Checking for sessionId or getting a new one
         let sessionId = window.sessionStorage.getItem(SESSION_STORAGE_KEY);
 
-        // Create session ID if it doesn't exist
         if (!sessionId) {
           const response = await fetch(`${API_URL}/tracking/site-sessions`, {
             method: "POST",
@@ -66,16 +76,19 @@ export const TrackingConsent = () => {
           const serverSessionData = await response.json();
           sessionId = serverSessionData?.data?.sessionId;
 
+          // Save trackingId in SessionStorage to only represent this user's session
           if (sessionId) {
             window.sessionStorage.setItem(SESSION_STORAGE_KEY, sessionId);
           }
         }
 
+        // Double-verifying both trackingId and sessionId are stored
         const newlyStoredTrackingId =
           window.localStorage.getItem(TRACKING_STORAGE_KEY);
         const newlyStoredSessionId =
           window.sessionStorage.getItem(SESSION_STORAGE_KEY);
 
+        // ✅ All good, setting canCollectData to "true"
         if (newlyStoredSessionId && newlyStoredTrackingId) {
           window.localStorage.setItem(DATA_PERMISSION_STORAGE_KEY, "true");
         }
@@ -84,7 +97,21 @@ export const TrackingConsent = () => {
       }
     };
 
-    trackVisit();
+    // The latter part of the Chrome prerender issue
+    const runWhenVisible = () => {
+      if (document.visibilityState === "visible") {
+        trackVisit();
+      }
+    };
+
+    // Run immediately if already visible
+    runWhenVisible();
+
+    // Otherwise wait until the page becomes visible & unmount event listener afterwards
+    document.addEventListener("visibilitychange", runWhenVisible);
+    return () => {
+      document.removeEventListener("visibilitychange", runWhenVisible);
+    };
   }, []);
 
   return null;
