@@ -89,3 +89,17 @@ export const TrackingConsent = () => {
 
   return null;
 };
+
+export const acceptConcent = () => {
+  window.localStorage.setItem(CONSENT_STORAGE_KEY, "accepted");
+  window.localStorage.setItem(DATA_PERMISSION_STORAGE_KEY, "true");
+  // TODO update the record in the backend
+};
+
+export const declineConsent = () => {
+  window.localStorage.setItem(CONSENT_STORAGE_KEY, "declined");
+  window.localStorage.setItem(DATA_PERMISSION_STORAGE_KEY, "false");
+  window.localStorage.removeItem(TRACKING_STORAGE_KEY);
+  window.sessionStorage.removeItem(SESSION_STORAGE_KEY);
+  // TODO update the record in the backend
+};

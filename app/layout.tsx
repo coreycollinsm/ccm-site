@@ -1,7 +1,7 @@
 import "./globals.css";
 
 import { TrackingConsent } from "@/components/trackers/TrackingConsent";
-import { Footer, SiteHeader } from "@/components/sections";
+import { DataBanner, Footer, SiteHeader } from "@/components/sections";
 
 import type { Metadata } from "next";
 export const metadata: Metadata = {
@@ -22,6 +22,7 @@ export default function RootLayout({
         <SiteHeader />
         {children}
         <Footer />
+        <DataBanner />
       </body>
     </html>
   );
