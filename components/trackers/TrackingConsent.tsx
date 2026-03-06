@@ -117,10 +117,27 @@ export const TrackingConsent = () => {
   return null;
 };
 
-export const acceptConcent = () => {
+export const acceptConsent = async () => {
+  const trackingId = window.localStorage.getItem(TRACKING_STORAGE_KEY);
+  const timestamp = getTimestamp();
+
+  try {
+    await fetch(`${API_URL}/tracking/opt-in`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        trackingId,
+        timestamp,
+      }),
+    });
+  } catch (err) {
+    console.error("Error opting-in trackingId:", err);
+  }
+
   window.localStorage.setItem(CONSENT_STORAGE_KEY, "accepted");
   window.localStorage.setItem(DATA_PERMISSION_STORAGE_KEY, "true");
-  // TODO update the record in the backend
 };
 
 export const declineConsent = async () => {

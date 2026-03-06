@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { acceptConcent, declineConsent } from "../trackers/TrackingConsent";
+import { acceptConsent, declineConsent } from "../trackers/TrackingConsent";
 
 export const DataBanner = () => {
   // Default = hidden
@@ -19,7 +19,7 @@ export const DataBanner = () => {
   const handleAccept = () => {
     setShowBanner(false);
     window.localStorage.setItem("hideBanner", "true");
-    acceptConcent();
+    acceptConsent();
   };
 
   const handleOptOut = () => {
