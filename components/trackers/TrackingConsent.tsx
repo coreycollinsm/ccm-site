@@ -123,10 +123,25 @@ export const acceptConcent = () => {
   // TODO update the record in the backend
 };
 
-export const declineConsent = () => {
+export const declineConsent = async () => {
+  const trackingId = window.localStorage.getItem(TRACKING_STORAGE_KEY);
+
+  try {
+    await fetch(`${API_URL}/tracking/opt-out`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        trackingId,
+      }),
+    });
+  } catch (err) {
+    console.error("Error removing trackingId:", err);
+  }
+
   window.localStorage.setItem(CONSENT_STORAGE_KEY, "declined");
   window.localStorage.setItem(DATA_PERMISSION_STORAGE_KEY, "false");
   window.localStorage.removeItem(TRACKING_STORAGE_KEY);
   window.sessionStorage.removeItem(SESSION_STORAGE_KEY);
-  // TODO update the record in the backend
 };
