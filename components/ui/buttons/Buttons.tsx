@@ -156,7 +156,7 @@ export const LogoLink = ({
     <Link
       className={className}
       href="/"
-      onClick={() => handleClickTracking(buttonId, page)}
+      onClick={() => handleClickTracking(page, buttonId)}
     >
       {darkMode ? (
         <Image src={LightLogo} loading="eager" height="30" alt="CCM Logo" />
