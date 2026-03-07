@@ -22,7 +22,7 @@ export const Footer = () => {
         </div>
         <div className="card-dark round padding flex-2 flex flex-col gap-4 items-start">
           <div className="flex flex-col gap-4">
-            <h5>Quick Links</h5>
+            <h4>Quick Links</h4>
             <ButtonLink
               buttonId={"ccm-footer-resume"}
               darkMode
@@ -32,6 +32,15 @@ export const Footer = () => {
               size="small"
               style="secondary"
               text={"Resume"}
+            />
+            <ButtonLink
+              href={"/data-policy"}
+              buttonId={"ccm-footer-datapolicy"}
+              page={"footer"}
+              darkMode
+              size="small"
+              style="secondary"
+              text={"Data Policy"}
             />
             <ButtonLink
               href={"/contact"}

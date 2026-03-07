@@ -1,1 +1,1 @@
-export * from "./WebsiteVisitTracker";
+export { TrackingConsent } from "./TrackingConsent";

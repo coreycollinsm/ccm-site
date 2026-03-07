@@ -196,18 +196,20 @@ const AnimatedIcon = ({
 const handleClickTracking = (page: string, buttonId: string) => {
   // Get the API URL
   const API_URL = process.env.NEXT_PUBLIC_API_ENDPOINT
-    ? `${process.env.NEXT_PUBLIC_API_ENDPOINT}/tracking/button-click`
-    : "https://api.coreycollinsm.com/tracking/button-click";
+    ? `${process.env.NEXT_PUBLIC_API_ENDPOINT}/tracking/button-clicks`
+    : "https://api.coreycollinsm.com/tracking/button-clicks";
 
   const timestamp = getTimestamp();
 
-  const visitId = window.sessionStorage.getItem("visit-id");
+  const sessionId = window.sessionStorage.getItem("sessionId");
+
+  if (!sessionId) return;
 
   // Format API payload
   const payload = {
     page,
     buttonId,
-    visitId: visitId ? visitId : "null",
+    sessionId: sessionId ? sessionId : "null",
     timestamp,
   };
 
