@@ -145,6 +145,7 @@ export const SubmitButton = ({
 import Image from "next/image";
 import Logo from "@/public/logo.webp";
 import LightLogo from "@/public/logo-light.webp";
+import { useTrackingConsent } from "@/context/TrackingConsentContext";
 
 export const LogoLink = ({
   buttonId,
@@ -202,8 +203,10 @@ const handleClickTracking = (page: string, buttonId: string) => {
   const timestamp = getTimestamp();
 
   const sessionId = window.sessionStorage.getItem("sessionId");
+  const CONSENT_STORAGE_KEY = "canCollectData";
+  const canTrack = window.localStorage.getItem(CONSENT_STORAGE_KEY);
 
-  if (!sessionId) return;
+  if (!sessionId || !canTrack) return;
 
   // Format API payload
   const payload = {

@@ -25,61 +25,10 @@ export const TrackingConsent = () => {
 
       // Pull saved consent status and stop if "declined"
       try {
-        const consent = window.localStorage.getItem(CONSENT_STORAGE_KEY);
-        if (consent === "declined") return;
+        const trackingId = await getNewTrackingId();
 
-        // ✅ consent is implied or directly stored - can collect data
-
-        // Checking for trackingId or getting a new one
-        let trackingId = window.localStorage.getItem(TRACKING_STORAGE_KEY);
-        if (!trackingId) {
-          const timestamp = getTimestamp();
-
-          const response = await fetch(`${API_URL}/tracking/site-visitors`, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              consent: consent == "accepted" ? "accepted" : "implied",
-              consentTimestamp: timestamp,
-            }),
-          });
-
-          if (!response.ok) throw new Error("Failed to create visit");
-
-          const serverTrackingData = await response.json();
-          trackingId = serverTrackingData?.data?.trackingId;
-
-          // Save trackingId in LocalStorage for multiple visits (represents the user)
-          if (trackingId) {
-            window.localStorage.setItem(TRACKING_STORAGE_KEY, trackingId);
-          } else return;
-        }
-
-        // Checking for sessionId or getting a new one
-        let sessionId = window.sessionStorage.getItem(SESSION_STORAGE_KEY);
-
-        if (!sessionId) {
-          const response = await fetch(`${API_URL}/tracking/site-sessions`, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              trackingId,
-            }),
-          });
-
-          if (!response.ok) throw new Error("Failed to create session");
-
-          const serverSessionData = await response.json();
-          sessionId = serverSessionData?.data?.sessionId;
-
-          // Save trackingId in SessionStorage to only represent this user's session
-          if (sessionId) {
-            window.sessionStorage.setItem(SESSION_STORAGE_KEY, sessionId);
-          }
+        if (trackingId) {
+          await getNewSessionId(trackingId);
         }
 
         // Double-verifying both trackingId and sessionId are stored
@@ -117,9 +66,83 @@ export const TrackingConsent = () => {
   return null;
 };
 
+const getNewTrackingId = async () => {
+  const consent = window.localStorage.getItem(CONSENT_STORAGE_KEY);
+  if (consent === "declined") return;
+
+  // ✅ consent is implied or directly stored - can collect data
+
+  // Checking for trackingId or getting a new one
+  let trackingId = window.localStorage.getItem(TRACKING_STORAGE_KEY);
+  if (!trackingId) {
+    const timestamp = getTimestamp();
+
+    const response = await fetch(`${API_URL}/tracking/site-visitors`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        consent: consent == "accepted" ? "accepted" : "implied",
+        consentTimestamp: timestamp,
+      }),
+    });
+
+    if (!response.ok) throw new Error("Failed to create visit");
+
+    const serverTrackingData = await response.json();
+    trackingId = serverTrackingData?.data?.trackingId;
+
+    // Save trackingId in LocalStorage for multiple visits (represents the user)
+    if (trackingId) {
+      window.localStorage.setItem(TRACKING_STORAGE_KEY, trackingId);
+      return trackingId;
+    } else return;
+  }
+};
+
+const getNewSessionId = async (trackingId: string) => {
+  // Checking for sessionId or getting a new one
+  let sessionId = window.sessionStorage.getItem(SESSION_STORAGE_KEY);
+
+  if (!sessionId) {
+    const response = await fetch(`${API_URL}/tracking/site-sessions`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        trackingId,
+      }),
+    });
+
+    if (!response.ok) throw new Error("Failed to create session");
+
+    const serverSessionData = await response.json();
+    sessionId = serverSessionData?.data?.sessionId;
+
+    // Save trackingId in SessionStorage to only represent this user's session
+    if (sessionId) {
+      window.sessionStorage.setItem(SESSION_STORAGE_KEY, sessionId);
+      return sessionId;
+    }
+  }
+};
+
 export const acceptConsent = async () => {
-  const trackingId = window.localStorage.getItem(TRACKING_STORAGE_KEY);
+  window.localStorage.setItem(CONSENT_STORAGE_KEY, "accepted");
+  window.localStorage.setItem(DATA_PERMISSION_STORAGE_KEY, "true");
+
+  // TODO trackingId doesn't exist after opt-out
+  let trackingId = window.localStorage.getItem(TRACKING_STORAGE_KEY);
   const timestamp = getTimestamp();
+
+  if (!trackingId) {
+    const newTrackingId = await getNewTrackingId();
+    if (newTrackingId) trackingId = newTrackingId;
+  }
+
+  if (trackingId) getNewSessionId(trackingId);
 
   try {
     await fetch(`${API_URL}/tracking/opt-in`, {
@@ -135,9 +158,6 @@ export const acceptConsent = async () => {
   } catch (err) {
     console.error("Error opting-in trackingId:", err);
   }
-
-  window.localStorage.setItem(CONSENT_STORAGE_KEY, "accepted");
-  window.localStorage.setItem(DATA_PERMISSION_STORAGE_KEY, "true");
 };
 
 export const declineConsent = async () => {
