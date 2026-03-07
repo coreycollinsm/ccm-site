@@ -6,6 +6,7 @@ TypeScript | Next.js | Node.js | MongoDB
 I build end-to-end web products — from frontend UX to backend APIs, integrations, analytics, and deployment.
 
 [View the Wiki](https://github.com/coreycollinsm/coreycollinsm/wiki) to learn more about this project.
+I am looking for a job as a full-stack developer. Learn more by reading my [job wiki page](https://github.com/coreycollinsm/coreycollinsm/wiki/I-Am-Looking-For-A-Job)
 
 ## Featured Projects
 
