@@ -3,10 +3,14 @@ import { useEffect, useState } from "react";
 import { acceptConsent, declineConsent } from "../trackers/TrackingConsent";
 import Link from "next/link";
 import { CardDividerOnly } from "../ui";
+import { usePathname } from "next/navigation";
 
 export const DataBanner = () => {
   // Default = hidden
   const [showBanner, setShowBanner] = useState(false);
+
+  const pathname = usePathname();
+  const isDataPolicyPage = pathname === "/data-policy";
 
   // LocalStorage hideBanner determines visibility
   useEffect(() => {
@@ -33,7 +37,7 @@ export const DataBanner = () => {
   const buttonBaseStyles =
     "py-3 px-4 sm:py-2 sm:px-3 text-md md:text-sm whitespace-nowrap border-2 border-(--black) rounded-full cursor-pointer text-center flex justify-center items-center";
 
-  if (showBanner)
+  if (showBanner || isDataPolicyPage)
     return (
       <div className="fixed bottom-5 px-5 left-[50%] -translate-x-[50%] w-full flex justify-center">
         <div className="card bg-(--almost-white) padding-grow round flex flex-col md:flex-row items-center gap-2 md:gap-4 max-w-240">
