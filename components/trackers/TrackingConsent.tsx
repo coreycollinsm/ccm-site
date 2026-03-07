@@ -96,9 +96,10 @@ const getNewTrackingId = async () => {
     // Save trackingId in LocalStorage for multiple visits (represents the user)
     if (trackingId) {
       window.localStorage.setItem(TRACKING_STORAGE_KEY, trackingId);
-      return trackingId;
-    } else return;
+    }
   }
+
+  return trackingId;
 };
 
 const getNewSessionId = async (trackingId: string) => {
