@@ -5,6 +5,8 @@ TypeScript | Next.js | Node.js | MongoDB
 
 I build end-to-end web products — from frontend UX to backend APIs, integrations, analytics, and deployment.
 
+[View the Wiki](https://github.com/coreycollinsm/coreycollinsm/wiki) to learn more about this project.
+
 ## Featured Projects
 
 ### Portfolio Analytics System
