@@ -1,9 +1,12 @@
 import "./globals.css";
 
 import { TrackingConsent } from "@/components/trackers/TrackingConsent";
+import { Suspense } from "react";
 import { DataBanner, Footer, SiteHeader } from "@/components/sections";
 
 import type { Metadata } from "next";
+import { TrackingConsentProvider } from "@/context/TrackingConsentContext";
+import { PageViewTracker } from "@/components/trackers/PageViewTracker";
 export const metadata: Metadata = {
   title: "Corey Collins M. - Full Stack Developer | Typescript & Mern",
   description:
@@ -18,11 +21,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <TrackingConsent />
-        <SiteHeader />
-        {children}
-        <Footer />
-        <DataBanner />
+        <TrackingConsentProvider>
+          <TrackingConsent />
+          <Suspense fallback={null}>
+            <PageViewTracker />
+          </Suspense>
+          <SiteHeader />
+          {children}
+          <Footer />
+          <DataBanner />
+        </TrackingConsentProvider>
       </body>
     </html>
   );
