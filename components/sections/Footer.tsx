@@ -1,4 +1,4 @@
-import { ButtonLink, LogoLink } from "@/components/ui";
+import { AllSocialLinks, ButtonLink, LogoLink } from "@/components/ui";
 import { SectionWrapper } from "./SectionWrapper";
 
 export const Footer = () => {
@@ -20,7 +20,7 @@ export const Footer = () => {
             integrations, and deployment.
           </p>
         </div>
-        <div className="card-dark round padding flex-2 flex flex-col gap-4 items-start">
+        <div className="card-dark round padding flex-2 flex flex-col gap-16 items-start">
           <div className="flex flex-col gap-4">
             <h4>Quick Links</h4>
             <ButtonLink
@@ -50,6 +50,10 @@ export const Footer = () => {
               size="small"
               text={"Contact"}
             />
+          </div>
+          <div className="flex flex-col gap-4">
+            <h4>Social Links</h4>
+            <AllSocialLinks />
           </div>
         </div>
       </SectionWrapper>

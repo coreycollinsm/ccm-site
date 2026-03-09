@@ -11,5 +11,6 @@ export * from "./cards/ParagraphImageCard";
 export * from "./cards/VerticalIconListCard";
 
 // Inline
+export * from "./inline/AllSocialLinks";
 export * from "./inline/CardDividerOnly";
 export * from "./inline/CardHeader";
