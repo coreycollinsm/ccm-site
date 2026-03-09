@@ -27,6 +27,12 @@ Next.js • Node • MongoDB • TypeScript
 
 (https://github.com/coreycollinsm/ccm-api)
 
+### Next Steps
+
+Develop the portal site based on the portal-concept mockup from Miro
+
+![Portal Concept](public/portal-concept.png)
+
 ---
 
 ### Campaign Platform
