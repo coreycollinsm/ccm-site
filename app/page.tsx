@@ -19,6 +19,7 @@ import HeroImage from "@/assets/home-hero.webp";
 import CoffeeShopImage from "@/assets/corey-coffee-shop.webp";
 import WritingImage from "@/assets/corey-writing.webp";
 import ServerImage from "@/assets/corey-server.webp";
+import CobaImage from "@/assets/coba.webp";
 
 // Icons
 import {
@@ -345,14 +346,45 @@ export default function Home() {
             ]}
             subtitle="I've built and developed multiple businesses across business sectors"
           />
-          <BlackParagraphCardWithButton
+          <ParagraphImageCard
+            backgroundAlignment={{ alignX: "left", alignY: "center" }}
+            backgroundImage={CobaImage}
+            className="flex-1 text-white"
             cta={{
+              href: "https://coba.digital",
+              buttonId: "ccm-home-cobalink",
+              darkMode: true,
+              newTab: true,
+              page: "home",
+              style: "secondary",
+              text: "Visit Website",
+            }}
+            paragraph={
+              <p>
+                I am a full stack web consultant
+                <br />
+                operating as Coba Digital LLC
+              </p>
+            }
+          />
+        </SectionWrapper>
+        <SectionWrapper>
+          <BlackParagraphCardWithButton
+            cta1={{
               href: "/Corey%20Collins%20-%20Resume.pdf",
               buttonId: "ccm-home-jobsearch-resume",
               darkMode: true,
               download: true,
               page: "home",
               text: "Download My Resume",
+            }}
+            cta2={{
+              href: "/contact",
+              buttonId: "ccm-home-jobsearch-contact",
+              darkMode: true,
+              page: "home",
+              style: "secondary",
+              text: "Contact Me",
             }}
             header="Let's Build Something Together"
             subtitle="I'm currently seeking a full-time Full Stack Developer role
