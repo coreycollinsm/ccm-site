@@ -3,9 +3,9 @@ import { SectionWrapper } from "@/components/sections";
 
 import type { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "Data Policy - Coba Digital",
+  title: "Data Policy - Corey Collins, M.",
   description:
-    "Learn about how we collect, use, and store your data to provide you with our services, communications and more. Understand how to request data removal and submit feedback or privacy concerns.",
+    "Learn about how I collect, use, and store your data to provide you with my website & portal services, communications and more. Understand how to request data removal and submit feedback or privacy concerns.",
 };
 
 const Page = () => {
