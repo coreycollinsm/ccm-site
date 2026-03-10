@@ -1,7 +1,7 @@
 # Corey Collins
 
-Full Stack Developer  
-TypeScript | Next.js | Node.js | MongoDB
+**Full Stack Developer**  
+TypeScript • Next.js • Node.js • MongoDB
 
 I build end-to-end web products — from frontend UX to backend APIs, integrations, analytics, and deployment.
 
@@ -10,98 +10,47 @@ I am looking for a job as a full-stack developer. Learn more by reading my [job 
 
 ## Featured Projects
 
-### Portfolio Analytics System
+# This Project
 
-Custom lightweight analytics platform capturing page visits, attribution sources, and user interactions.
+| Project                        | Description                                                                                     | Key Capabilities                                                                                                            | Tech                                     | Repositories                                                                                                           |
+| ------------------------------ | ----------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| **Portfolio Analytics System** | Lightweight analytics platform capturing page visits, attribution sources, and UI interactions. | Anonymous session tracking<br>UTM attribution<br>Button click event tracking<br>MongoDB event schema<br>API event ingestion | Next.js • Node.js • MongoDB • TypeScript | [ccm-api](https://github.com/coreycollinsm/ccm-api) <br><br> [ccm-portal](https://github.com/coreycollinsm/ccm-portal) |
 
-Features
+<br>
 
-- Anonymous session tracking
-- UTM attribution
-- Button click event tracking
-- MongoDB event schema
-- API event ingestion
+Site Screenshot:
 
-Tech
-Next.js • Node • MongoDB • TypeScript
+![Site Screenshot](public/site-screenshot.png)
 
-(https://github.com/coreycollinsm/ccm-api)
+# CCM Platform Architecture
 
-### Next Steps
+| Layer              | Technology                                                            |
+| ------------------ | --------------------------------------------------------------------- |
+| **Frontend**       | Next.js, React, TypeScript                                            |
+| **Backend**        | Node.js, Express                                                      |
+| **Database**       | MongoDB / MongoDB Atlas                                               |
+| **Infrastructure** | Netlify (frontend), Render (API), MongoDB Atlas                       |
+| **Integrations**   | SendGrid, Google Cloud Storage, Gemini AI, Asana, Monday.com, ClickUp |
 
-Develop the portal site based on the portal-concept mockup from Miro
+<br>
+
+# Next Steps
+
+Future development for the CCM ecosystem includes the **portal application**.
+
+| Project        | Purpose                                                                   | Repository                                  |
+| -------------- | ------------------------------------------------------------------------- | ------------------------------------------- |
+| **ccm-portal** | Admin dashboard and operational tools for analytics and system management | https://github.com/coreycollinsm/ccm-portal |
+
+Portal concept mockup:
 
 ![Portal Concept](public/portal-concept.png)
 
----
+<br>
 
-### Campaign Platform
+# Links
 
-Full-stack campaign platform with admin portal, automation, and multi-tenant data architecture.
-
-Features
-
-- RBAC + multi-tenant authorization
-- Volunteer + newsletter systems
-- SendGrid email automation
-- CSV export
-- Rate limiting on API routes
-
-Tech
-Next.js • Node • MongoDB • SendGrid
-
-TODO I will add a link to this repo shortly. It is currently proprietary and I must make some adjustments
-
----
-
-### Rental Listing Platform
-
-Full-stack rental site with authenticated owner portal.
-
-Features
-
-- Listing CRUD management
-- Google Cloud Storage image pipeline
-- Session authentication
-- Admin filtering + sorting
-- Password reset flow
-
-Tech
-Next.js • Node • MongoDB
-
-TODO I will add a link to this repo shortly. It is currently proprietary and I must make some adjustments
-
----
-
-## Tech Stack
-
-Frontend
-
-- React
-- Next.js
-- TypeScript
-
-Backend
-
-- Node.js
-- Express
-- REST APIs
-
-Database
-
-- MongoDB / Mongo Atlas
-
-Integrations
-
-- SendGrid
-- Google Cloud Storage
-- Gemini AI
-- Asana / Monday / ClickUp
-
----
-
-Portfolio  
-(https://coreycollinsm.com/?source=github-readme)
-
-LinkedIn  
-(https://www.linkedin.com/in/coreycollinsm/)
+| Resource  | Link                                       |
+| --------- | ------------------------------------------ |
+| Portfolio | https://coreycollinsm.com/                 |
+| LinkedIn  | https://www.linkedin.com/in/coreycollinsm/ |
