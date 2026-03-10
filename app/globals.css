@@ -30,14 +30,6 @@
     @apply text-base font-medium uppercase tracking-wide;
     line-height: 1.4;
   }
-
-  input {
-    @apply border border-(--gray) rounded-md bg-(--dark-gray) text-white py-1 px-2;
-  }
-
-  textarea {
-    @apply border border-(--gray) rounded-md bg-(--dark-gray) text-white py-1 px-2 resize-none;
-  }
 }
 
 @layer components {
@@ -50,6 +42,12 @@
     @apply border shadow-sm min-w-100 bg-(--almost-black);
     border-width: 1px;
     border-color: var(--dark-gray);
+  }
+  .input {
+    @apply border border-(--light-gray) rounded-md bg-(--brighter-gray) py-1 px-2;
+  }
+  .input-dark {
+    @apply border border-(--almost-dark-gray) rounded-md bg-(--dark-gray) text-white py-1 px-2;
   }
   .padding {
     @apply p-4 sm:p-8;
@@ -72,6 +70,12 @@
   .section-wrap-reverse {
     @apply flex flex-col-reverse lg:flex-row gap-16 lg:gap-8;
   }
+  .textarea {
+    @apply border border-(--brighter-gray) rounded-md bg-(--almost-white) text-white py-1 px-2 resize-none;
+  }
+  .textarea-dark {
+    @apply border border-(--almost-dark-gray) rounded-md bg-(--dark-gray) text-white py-1 px-2 resize-none;
+  }
   .round {
     @apply rounded-2xl sm:rounded-4xl;
   }
@@ -84,7 +88,7 @@
 :root {
   --background: var(--almost-white);
   --foreground: #171717;
-  --border: #eee;
+  --border: #f7f7f7;
   --surface: #e3e3e3;
   --surface-2: #d2d2d2;
 
@@ -93,10 +97,14 @@
   --black: #171717;
   --almost-black: #2a2a2a;
   --dark-gray: #333;
-  --gray: #555;
-  --light-gray: #747474;
-  --bright-gray: #a7a7a7;
-  --almost-white: #f8f8f8;
+  --almost-dark-gray: #444;
+  --medium-gray: #999;
+  --faded-gray: #bbb;
+  --gray: #ddd;
+  --light-gray: #e7e7e7;
+  --bright-gray: #f0f0f0;
+  --brighter-gray: #f3f3f3;
+  --almost-white: #fafafa;
 }
 
 body {

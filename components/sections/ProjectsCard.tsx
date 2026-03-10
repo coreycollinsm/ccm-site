@@ -73,7 +73,7 @@ const ProjectCardHeader = ({
   return (
     <div>
       <p className="text-2xl">{header}</p>
-      <p className="text-(--bright-gray)">{description}</p>
+      <p className="text-(--medium-gray)">{description}</p>
     </div>
   );
 };
@@ -117,7 +117,7 @@ const ProjectButtons = ({ ctas }: { ctas: LinkButtonProps[] }) => {
 
 const ProjectTags = ({ tags }: { tags: string[] }) => {
   return (
-    <div className="flex items-center flex-wrap gap-2 text-xs text-(--bright-gray)">
+    <div className="flex items-center flex-wrap gap-2 text-xs text-(--medium-gray)">
       <FaTags />
       {tags.map((tag, index) => {
         return <p key={`project${index}-tag-`}>{tag}</p>;

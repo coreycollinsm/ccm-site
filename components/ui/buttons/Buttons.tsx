@@ -49,13 +49,13 @@ const darkStyleClasses = {
 };
 
 const hoverClasses = {
-  primary: "hover:bg-(--gray) hover:border-(--gray)",
+  primary: "hover:bg-(--dark-gray) hover:border-(--dark-gray)",
   secondary: "hover:bg-(--black) hover:text-white",
   tertiary: "hover:border-b-(--gray)",
 };
 
 const darkHoverClasses = {
-  primary: "hover:bg-(--almost-white) hover:border-(--almost-white)",
+  primary: "hover:bg-(--bright-gray) hover:border-(--bright-gray)",
   secondary: "hover:bg-white hover:text-(--black)",
   tertiary: "hover:bg-(--primary)/70 hover:text-white",
 };
