@@ -30,6 +30,8 @@ Develop the portal site based on the portal-concept mockup from Miro
 
 ![Portal Concept](public/portal-concept.png)
 
+Repo available as of March 10 on [GitHub](https://github.com/coreycollinsm/ccm-portal)
+
 ---
 
 ### Campaign Platform
