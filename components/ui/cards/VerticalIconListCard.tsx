@@ -34,7 +34,7 @@ export const VerticalIconListCard = ({
                 <Icon className="text-2xl" />
                 <p>{title}</p>
               </div>
-              <p className="text-(--light-gray) text-sm">{description}</p>
+              <p className="text-(--medium-gray) text-sm">{description}</p>
             </div>
           );
         })}

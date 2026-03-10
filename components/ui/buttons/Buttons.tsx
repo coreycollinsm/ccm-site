@@ -34,28 +34,28 @@ interface SubmitButtonProps extends BaseButtonProps {
 // Button Styling
 ///////////////////////////
 const baseClasses =
-  "flex items-center justify-center gap-1 border-2 rounded-full cursor-pointer transition-all group whitespace-nowrap duration-300";
+  "flex items-center justify-center gap-1 cursor-pointer transition-all group whitespace-nowrap duration-300";
 
 const styleClasses = {
-  primary: "bg-(--black) border-(--black) text-white",
-  secondary: "border-(--black)",
-  tertiary: "bg-(--primary) border-(--primary) shadow-sm",
+  primary: "bg-(--black) border-(--black) text-white rounded-full border-2",
+  secondary: "border-(--black) rounded-full border-2",
+  tertiary: "border-b-2 border-(--black)",
 };
 
 const darkStyleClasses = {
-  primary: "bg-white border-white text-(--black)",
-  secondary: "text-white border-white",
-  tertiary: "bg-(--primary) border-(--primary) shadow-sm",
+  primary: "bg-white border-white text-(--black) rounded-full border-2",
+  secondary: "text-white border-white rounded-full border-2",
+  tertiary: "border-b-2 bg-white border-white shadow-sm",
 };
 
 const hoverClasses = {
-  primary: "hover:bg-(--gray) hover:border-(--gray)",
+  primary: "hover:bg-(--dark-gray) hover:border-(--dark-gray)",
   secondary: "hover:bg-(--black) hover:text-white",
-  tertiary: "hover:bg-(--primary)/50",
+  tertiary: "hover:border-b-(--gray)",
 };
 
 const darkHoverClasses = {
-  primary: "hover:bg-(--almost-white) hover:border-(--almost-white)",
+  primary: "hover:bg-(--bright-gray) hover:border-(--bright-gray)",
   secondary: "hover:bg-white hover:text-(--black)",
   tertiary: "hover:bg-(--primary)/70 hover:text-white",
 };

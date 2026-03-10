@@ -1,7 +1,15 @@
 import { SectionWrapper } from "@/components/sections";
-import { ButtonLink, LogoLink } from "@/components/ui";
+import {
+  ButtonLink,
+  LogoLink,
+  NavLink,
+  PublicMobileNavigationMenu,
+} from "@/components/ui";
+import { publicNavigationLinks } from "@/config";
 
 export const SiteHeader = () => {
+  const cta = publicNavigationLinks.cta;
+
   return (
     <SectionWrapper>
       <div className="w-full flex items-center justify-between mt-4 p-4 round card">
@@ -11,24 +19,26 @@ export const SiteHeader = () => {
           page="nav"
           text={null}
         />
-        <nav className="flex items-center gap-2">
+        <nav className="hidden md:flex items-center gap-4">
+          {publicNavigationLinks.links.map((link) => {
+            const { href, text } = link;
+            return (
+              <NavLink key={href} href={href}>
+                {text}
+              </NavLink>
+            );
+          })}
           <ButtonLink
-            href={"/Corey%20Collins%20-%20Resume.pdf"}
-            buttonId={"ccm-nav-resume"}
-            download
-            page={"nav"}
-            size="small"
-            style="secondary"
-            text={"Resume"}
-          />
-          <ButtonLink
-            href={"/contact"}
+            href={cta.href}
             buttonId={"ccm-nav-contact"}
             page={"nav"}
             size="small"
-            text={"Contact"}
+            text={cta.text}
           />
         </nav>
+        <div className="w-full max-w-48 md:hidden">
+          <PublicMobileNavigationMenu />
+        </div>
       </div>
     </SectionWrapper>
   );

@@ -112,14 +112,14 @@ export const ContactForm = ({ className }: { className?: string }) => {
         <div className="flex flex-col gap-3">
           <div className="flex flex-wrap md:flex-nowrap gap-3 items-center">
             <input
-              className="w-full"
+              className="w-full input-dark"
               type="text"
               onChange={(e) => setFirstName(e.target.value)}
               placeholder="First Name"
               required
             />
             <input
-              className="w-full"
+              className="w-full input-dark"
               type="text"
               onChange={(e) => setLastName(e.target.value)}
               placeholder="Last Name"
@@ -127,7 +127,7 @@ export const ContactForm = ({ className }: { className?: string }) => {
             />
           </div>
           <input
-            className="w-full"
+            className="w-full input-dark"
             type="email"
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Email"
@@ -135,7 +135,7 @@ export const ContactForm = ({ className }: { className?: string }) => {
           />
           <div className="flex flex-wrap md:flex-nowrap gap-2 items-center">
             <input
-              className="w-full"
+              className="w-full input-dark"
               type="text"
               onChange={(e) => setCompany(e.target.value)}
               placeholder="Company"
@@ -144,7 +144,7 @@ export const ContactForm = ({ className }: { className?: string }) => {
           </div>
           <textarea
             placeholder="Message"
-            className="form-control w-full"
+            className="form-control w-full textarea-dark"
             onChange={(e) => setMessage(e.target.value)}
             rows={5}
             required
