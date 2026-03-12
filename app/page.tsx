@@ -2,7 +2,6 @@
 import { ProjectsCard, SectionWrapper } from "@/components/sections";
 import {
   BulletListCard,
-  ImageOnlyCard,
   DedicatedLinkCard,
   ImageWithTextBottomCard,
   ParagraphImageCard,
@@ -17,7 +16,6 @@ const gitHubLink = socialLinks.github.href;
 
 // Images
 import HeroImage from "@/assets/home-hero.webp";
-import CoffeeShopImage from "@/assets/corey-coffee-shop.webp";
 import WritingImage from "@/assets/corey-writing.webp";
 import ServerImage from "@/assets/corey-server.webp";
 import CobaImage from "@/assets/coba.webp";
