@@ -8,6 +8,7 @@ import {
   ParagraphImageCard,
   VerticalIconListCard,
   BlackParagraphCardWithButton,
+  MetricsCard,
 } from "@/components/ui";
 
 // Links
@@ -58,11 +59,28 @@ export default function Home() {
           />
         </SectionWrapper>
         <SectionWrapper className="section-wrap">
-          <ImageOnlyCard
-            backgroundAlignment={{ alignX: "center", alignY: "top" }}
-            backgroundImage={CoffeeShopImage}
+          <MetricsCard
             className="flex-1"
-            noGradient
+            header="The Numbers"
+            metrics={[
+              {
+                metric: "$100M+",
+                description: "in managed revenue",
+              },
+              {
+                metric: "$40K+",
+                description: "projects completed",
+              },
+              {
+                metric: "$2M+",
+                description: "in prevented waste",
+              },
+              {
+                metric: "10",
+                description: "business sectors",
+              },
+            ]}
+            subtitle="I've delivered measurable impact"
           />
           <BulletListCard
             bulletListAsTextArray={[
