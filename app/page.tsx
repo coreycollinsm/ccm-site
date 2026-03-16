@@ -2,7 +2,6 @@
 import { ProjectsCard, SectionWrapper } from "@/components/sections";
 import {
   BulletListCard,
-  ImageOnlyCard,
   DedicatedLinkCard,
   ImageWithTextBottomCard,
   ParagraphImageCard,
@@ -17,7 +16,6 @@ const gitHubLink = socialLinks.github.href;
 
 // Images
 import HeroImage from "@/assets/home-hero.webp";
-import CoffeeShopImage from "@/assets/corey-coffee-shop.webp";
 import WritingImage from "@/assets/corey-writing.webp";
 import ServerImage from "@/assets/corey-server.webp";
 import CobaImage from "@/assets/coba.webp";
@@ -61,14 +59,14 @@ export default function Home() {
         <SectionWrapper className="section-wrap">
           <MetricsCard
             className="flex-1"
-            header="The Numbers"
+            header="By The Numbers"
             metrics={[
               {
                 metric: "$100M+",
                 description: "in managed revenue",
               },
               {
-                metric: "$40K+",
+                metric: "40K+",
                 description: "projects completed",
               },
               {
@@ -80,7 +78,7 @@ export default function Home() {
                 description: "business sectors",
               },
             ]}
-            subtitle="I've delivered measurable impact"
+            subtitle="I've delivered measurable impact as an operations and technical project manager. I understand businesses."
           />
           <BulletListCard
             bulletListAsTextArray={[
